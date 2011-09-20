@@ -9,6 +9,7 @@ module Highrise
       # Ex: Highrise::Person.search(:email => "john.doe@example.com", :country => "CA")
       # Available criteria are: city, state, country, zip, phone, email
       def search(options = {})
+        raise ArgumentError, "cannot convert #{options}:#{options.class} to hash" if options.kind_of?(String)
         search_params = options.inject({}) { |h, (k, v)| h["criteria[#{k}]"] = v; h }
         # This might have to be changed in the future if other non-pagable resources become searchable
         if self.respond_to?(:find_all_across_pages)

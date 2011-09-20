@@ -1,3 +1,16 @@
+##whats in this fork
+
+This fork is very close to the orginal gem. I have added a few features and shortcut methods;
+
+
+    Highrise::Tag.delete_by_name('tag_name')
+    
+    Highrise::Person.url_for(123)
+    Highrise::Person.find(123).tagged?('tag_name')
+    Highrise::Person.find(123).email_address
+    Highrise::Person.find(123).email_valid?
+    Highrise::Person.find(123).phone_number
+
 # Highrise (3.0.0) [![Build Status](https://secure.travis-ci.org/tapajos/highrise.png)](http://travis-ci.org/tapajos/highrise)
 
 ## What is it?
@@ -10,7 +23,7 @@ All these classes are inherited from ActiveResouce::Base. Refer to the [ActiveRe
 
 ## Installing
 
-    gem install highrise
+    gem install peterosullivan-highrise
 
 ### Dependencies (see <code>highrise.gemspec</code> or run <code>bundle check</code>)
 

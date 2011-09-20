@@ -1,5 +1,6 @@
 module Highrise
   class Person < Subject
+    require 'highrise/rfc822'
     include Pagination
     include Taggable
     include Searchable
@@ -23,5 +24,22 @@ module Highrise
     def label
       'Party'
     end
+    
+    def phone_number
+      contact_data.phone_numbers.first.number rescue nil
+    end
+    
+    def email_valid?
+      !!(email_address && (email_address =~ RFC822::EmailAddress))
+    end
+    
+    def email_address
+      contact_data.email_addresses.first.address rescue nil
+    end
+    
+    def tagged? name
+     tags.any?{ | tag | tag['name'].to_s == name}  
+    end
+    
   end
 end
