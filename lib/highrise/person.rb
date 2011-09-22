@@ -42,6 +42,7 @@ module Highrise
     def email_address
       contact_data.email_addresses.first.address rescue nil
     end
+    alias :email :email_address
     
     def tagged? name
      tags.any?{ | tag | tag['name'].to_s == name}  
