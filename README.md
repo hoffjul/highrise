@@ -15,12 +15,9 @@ This fork is very close to the orginal gem. I have added a few features and shor
 ###Highrise Custom Fields read only (called "subject_datas" in the Highrise API)
 
     p = Highrise::Person.find(123)
-    p.subject_data_fields 
-{"favourite_color"=>"red"}
-    p.field("FavouriteColor") 
-<Highrise::SubjectData:0xb5e3442c @attributes={"subject_field_label"=>"FavouriteColor", "id"=>12065552, "value"=>"red", "subject_field_id"=>123}, @prefix_options={}>
-    p.favourite_color
- "red"
+    p.subject_data_fields #{"favourite_color"=>"red"}
+    p.field("FavouriteColor") #<Highrise::SubjectData:0xb5e3442c @attributes={"subject_field_label"=>"FavouriteColor", "id"=>12065552, "value"=>"red", "subject_field_id"=>123}, @prefix_options={}>
+    p.favourite_color #"red"
 
 
 
