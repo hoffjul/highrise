@@ -3,6 +3,8 @@ require 'active_resource'
 module Highrise
   class Base < ActiveResource::Base
     
+    self.format = :xml #Higrise API only works with xml and not JSON
+    
     def self.url_for(n)
       base  = site.to_s.split('@')[1]
       File.join('https://', base, element_path(n)).gsub(".xml",'')

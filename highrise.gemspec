@@ -3,7 +3,7 @@ $:.push File.expand_path("../lib", __FILE__)
 require "highrise/version"
 
 Gem::Specification.new do |s|
-  s.name        = "highrise"
+  s.name        = "peterosullivan-highrise"
   s.version     = Highrise::VERSION
   s.platform    = Gem::Platform::RUBY
 
@@ -16,13 +16,13 @@ Gem::Specification.new do |s|
   s.test_files    = `git ls-files -- {test,spec,features,examples}/*`.split("\n")
   s.require_paths = ["lib"]
 
-  s.authors       = ["Marcos Tapaj\303\263s", "Ken Mayer"]
-  s.email         = ["marcos@tapajos.me", "kmayer@bitwrangler.com"]
-  s.homepage      = "http://github.com/tapajos/highrise"
+  s.authors       = ["Marcos Tapaj\303\263s", "Ken Mayer", "Peter O'Sullivan"]
+  s.email         = ["marcos@tapajos.me", "kmayer@bitwrangler.com", "peter@peterosullivan.net"]
+  s.homepage      = "https://github.com/peterosullivan/highrise"
   s.summary       = %q{Ruby wrapper around Highrise API}
   s.description   = <<-EOT
     Based on the original API module from DHH, http://developer.37signals.com/highrise/, this
-    gem is a cleaned up, tested version of the same. 
+    gem is a cleaned up, tested version of the same. A fork of Tapaj gem. See the homepage for added features.
 
     Configure by adding the following:
 

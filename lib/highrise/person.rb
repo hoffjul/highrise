@@ -4,6 +4,12 @@ module Highrise
     include Pagination
     include Taggable
     include Searchable
+    include SubjectData::Mixin
+    
+    def initialize(*args)
+      super(*args)
+      create_subject_fields_accessors
+    end 
     
     def company
       Company.find(company_id) if company_id
@@ -39,6 +45,18 @@ module Highrise
     
     def tagged? name
      tags.any?{ | tag | tag['name'].to_s == name}  
+    end
+    alias :tagged_with_name :tagged?
+    
+    def create_subject_fields_accessors  
+      subject_data_fields.each do |subject_field_name, value|
+        # for this instance only
+        singleton_class.instance_eval do
+          define_method subject_field_name do
+            value 
+          end
+        end
+      end
     end
     
   end
