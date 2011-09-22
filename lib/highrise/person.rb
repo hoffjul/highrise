@@ -47,7 +47,16 @@ module Highrise
     def tagged? name
      tags.any?{ | tag | tag['name'].to_s == name}  
     end
-    alias :tagged_with_name :tagged?
+    
+    def self.tagged_with_name(tag_name)
+      tagged_with_id((Tag.find_by_name(tag_name)).id)
+    end
+    
+    def self.tagged_with_id id
+     find_all_across_pages(:from => "/tags/#{id}.xml").select do |obj|
+        obj.kind_of?(Person)
+      end
+    end
     
     def create_subject_fields_accessors  
       subject_data_fields.each do |subject_field_name, value|

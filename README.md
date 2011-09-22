@@ -7,8 +7,8 @@ This fork is very close to the orginal gem. I have added a few features and shor
     
 ###Tag methods 
     Highrise::Tag.delete_by_name('tag_name')
+    Highrise::Person.tagged_with_name('tag_name')
     Highrise::Person.find(123).tagged?('tag_name')
-    Highrise::Person.find(123).tagged_with_name('tag_name')
     
 ###Email methods
     Highrise::Person.find(123).email_address
