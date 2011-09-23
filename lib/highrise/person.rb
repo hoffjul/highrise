@@ -1,15 +1,9 @@
 module Highrise
   class Person < Subject
-    require 'highrise/rfc822'
     include Pagination
     include Taggable
     include Searchable
-    include SubjectData::Mixin
-    
-    def initialize(*args)
-      super(*args)
-      create_subject_fields_accessors
-    end 
+    include HasSubjectData
     
     def company
       Company.find(company_id) if company_id
@@ -55,17 +49,6 @@ module Highrise
     def self.tagged_with_id id
      find_all_across_pages(:from => "/tags/#{id}.xml").select do |obj|
         obj.kind_of?(Person)
-      end
-    end
-    
-    def create_subject_fields_accessors  
-      subject_data_fields.each do |subject_field_name, value|
-        # for this instance only
-        singleton_class.instance_eval do
-          define_method subject_field_name do
-            value 
-          end
-        end
       end
     end
     

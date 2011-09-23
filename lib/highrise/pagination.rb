@@ -38,7 +38,8 @@ module Highrise
         options[:params][:n] = 0
 
         loop do
-          if (records = self.find(:all, options)).try(:any?)
+          records = find(:all, options)
+          if records && records.any?
             records.each { |record| yield record }
             options[:params][:n] += records.size
           else

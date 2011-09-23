@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    highrise (3.0.1)
+    peterosullivan-highrise (3.0.6)
       activeresource (~> 3.0)
 
 GEM
@@ -41,6 +41,6 @@ PLATFORMS
 
 DEPENDENCIES
   activeresource (~> 3.0)
-  highrise!
+  peterosullivan-highrise!
   rake (= 0.8.7)
   rspec (~> 2.0.1)
