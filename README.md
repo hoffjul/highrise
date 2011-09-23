@@ -20,9 +20,6 @@ This fork is very close to the orginal gem. I have added a few features and shor
     p = Highrise::Person.find(123)
     p.subject_data_hash #{"favourite_color"=>"red"}
     p.field("FavouriteColor") #<Highrise::SubjectData:0xb5e3442c @attributes={"subject_field_label"=>"FavouriteColor", "id"=>12065552, "value"=>"red", "subject_field_id"=>123}, @prefix_options={}>
-    p.favourite_color #"red"
-
-
 
 # Highrise (3.0.0) [![Build Status](https://secure.travis-ci.org/tapajos/highrise.png)](http://travis-ci.org/tapajos/highrise)
 
