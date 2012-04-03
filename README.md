@@ -15,11 +15,13 @@ This fork is very close to the orginal gem. I have added a few features and shor
     Highrise::Person.find(123).email #alias for email_address 
     Highrise::Person.find(123).email_valid?
  
-###Highrise Custom Fields read only (called "subject_datas" in the Highrise API)
+###Highrise Custom Fields - read and write (called "subject_datas" in the Highrise API)
 
     p = Highrise::Person.find(123)
     p.subject_data_hash #{"favourite_color"=>"red"}
     p.field("FavouriteColor") #<Highrise::SubjectData:0xb5e3442c @attributes={"subject_field_label"=>"FavouriteColor", "id"=>12065552, "value"=>"red", "subject_field_id"=>123}, @prefix_options={}>
+    p.set_field_value("FavouriteColor","blue")
+    p.save
 
 # Highrise (3.0.0) [![Build Status](https://secure.travis-ci.org/tapajos/highrise.png)](http://travis-ci.org/tapajos/highrise)
 
