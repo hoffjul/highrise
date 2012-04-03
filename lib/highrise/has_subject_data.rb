@@ -15,5 +15,12 @@ module Highrise
       end
     end
     
+    def set_field_value(field_name, value)
+      cf = (attributes["subject_datas"] || []).detect do |sd|
+        sd.subject_field_label == field_name.to_s
+      end
+      cf.value = value
+    end
+     
   end
 end
