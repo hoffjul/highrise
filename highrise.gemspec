@@ -3,8 +3,8 @@ $:.push File.expand_path("../lib", __FILE__)
 require "highrise/version"
 
 Gem::Specification.new do |s|
-  s.name        = "peterosullivan-highrise"
-  s.version     = Highrise::VERSION
+  s.name        = "hoffjul-highrise"
+  s.version     = "0.0.1"
   s.platform    = Gem::Platform::RUBY
 
   s.required_rubygems_version = ">= 1.3.6"
