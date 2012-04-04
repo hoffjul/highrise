@@ -20,7 +20,8 @@ module Highrise
         sd.subject_field_label == field_name.to_s
       end
       cf.value = value
+      cf
     end
-    cf
+    
   end
 end
