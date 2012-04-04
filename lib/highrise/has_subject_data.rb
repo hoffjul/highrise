@@ -21,6 +21,6 @@ module Highrise
       end
       cf.value = value
     end
-    
+    cf
   end
 end

@@ -52,9 +52,10 @@ module Highrise
       end
     end
     
-    def new_field(sfl,v,sfi)
-      sd = SubjectData.new(:subject_field_label => sfl, :value => v, :subject_field_id => sfi)
+    def new_field(sfl,sfi)
+      sd = SubjectData.new(:subject_field_label => sfl, :value => nil, :subject_field_id => sfi)
       attributes["subject_datas"] << sd
+      sd
     end
     
   end
