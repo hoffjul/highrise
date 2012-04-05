@@ -54,7 +54,11 @@ module Highrise
     
     def new_field(sfl,sfi)
       sd = SubjectData.new(:subject_field_label => sfl, :value => nil, :subject_field_id => sfi)
-      attributes["subject_datas"] << sd
+      if attributes["subject_datas"] 
+        attributes["subject_datas"] << sd
+      else
+        attributes["subject_datas"] = [sd]
+      end
       sd
     end
     
