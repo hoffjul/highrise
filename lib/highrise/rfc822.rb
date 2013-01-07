@@ -25,7 +25,8 @@ module Highrise
       word = "(?:#{atom}|#{quoted_string})"
       domain = "#{sub_domain}(?:\\x2e#{sub_domain})*"
       local_part = "#{word}(?:\\x2e#{word})*"
-      addr_spec = "#{local_part}\\x40#{domain}"
+      # addr_spec = "#{local_part}\\x40#{domain}"
+      addr_spec = Regexp.new("#{local_part}\\x40#{domain}", nil, 'n')
       pattern = /\A#{addr_spec}\z/
     end
   end
